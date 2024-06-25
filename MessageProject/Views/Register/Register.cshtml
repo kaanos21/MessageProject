@@ -1,0 +1,39 @@
+﻿@model MessageProject.Models.UserRegisterModel
+
+@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/UserLayout.cshtml";
+}
+
+<h2>Register</h2>
+
+<form method="post" class="form-group">
+
+        <label>Adınız</label>
+        <input type="text" asp-for="name" class="form-control" />
+        <span asp-validation-for="name" class="text-danger"></span>
+    
+
+        <label>Soyadınız</label>
+        <input type="text" asp-for="surname" class="form-control" />
+        <span asp-validation-for="surname" class="text-danger"></span>
+
+
+        <label>Kullanıcı Adınız</label>
+        <input type="text" asp-for="username" class="form-control" />
+        <span asp-validation-for="username" class="text-danger"></span>
+
+
+        <label>Mail</label>
+        <input type="email" asp-for="mail" class="form-control" />
+        <span asp-validation-for="mail" class="text-danger"></span>
+
+
+        <label>Şifreniz</label>
+        <input type="password" asp-for="password" class="form-control" />
+        <span asp-validation-for="password" class="text-danger"></span>
+
+    <button type="submit" class="btn btn-primary">Kayıt Ol</button>
+</form>
+
+
