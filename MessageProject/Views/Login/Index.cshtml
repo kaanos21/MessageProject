@@ -1,0 +1,17 @@
+﻿@model MessageProject.Models.UserLoginModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/UserLayout.cshtml";
+}
+
+<h1>Giriş Ekranı</h1>
+
+<form method="post" class="form-group">
+
+        <label>Kullanıcı Adı</label>
+    <input type="text" asp-for="username" class="form-control" />
+        <label>Şifre</label>
+    <input type="password" asp-for="password" class="form-control" />
+        <button type="submit" class="btn btn-primary">Giriş Yap</button>
+</form>
+

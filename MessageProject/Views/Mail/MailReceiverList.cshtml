@@ -1,0 +1,40 @@
+﻿@model List<EntityLayer.Concrete.Message>
+@{
+    ViewData["Title"] = "MailList";
+    Layout = "~/Views/Shared/UserLayout.cshtml";
+}
+
+<div class="container mt-4">
+    <h2 class="text-center">Maillerim</h2>
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Content</th>
+                    <th>Date</th>
+                    <th>Receiver Email</th>
+                    <th>Sender Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var message in Model)
+                {
+                    <tr>
+                        <td>@message.ID</td>
+                        <td>@message.Title</td>
+                        <td>@message.Content</td>
+                        <td>@message.Date.ToString("yyyy-MM-dd HH:mm")</td>
+                        <td>@message.Receiver.Email</td>
+                        <td>@message.Sender.Email</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+

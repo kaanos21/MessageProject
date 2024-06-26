@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using EntityLayer.Concrete;
 
-namespace EntityLayer.Concrete
+namespace MessageProject.Models
 {
-    public class Message
+    public class MessageListModel
     {
         public int ID { get; set; }
         public string Title { get; set; }

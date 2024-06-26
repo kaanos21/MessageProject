@@ -33,9 +33,24 @@ namespace BusinessLayer.Concrete
             return _messageDal.GetListAll();
         }
 
+        public List<Message> TGetMessagedReceiverWithInclude(int id)
+        {
+            return _messageDal.GetMessagedReceiverWithInclude(id);
+        }
+
+        public List<Message> TGetMessagedSenderWithInclude(int id)
+        {
+            return _messageDal.GetMessagedSenderWithInclude(id);
+        }
+
         public void TInsert(Message entity)
         {
             _messageDal.Insert(entity);
+        }
+
+        public void TSendMessage(Message message)
+        {
+            _messageDal.SendMessage(message);
         }
 
         public void TUpdate(Message entity)

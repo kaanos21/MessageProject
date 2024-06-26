@@ -54,35 +54,48 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
+                            <a href="/Mail/MailSenderList" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Mesaj Gönder</p>
+                                        <p>Aldığım Mailler</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
+                            <a href="/Mail/MailReceiverList" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Mesajlarım</p>
+                                        <p>Gönderdiğim Mailler</p>
                                     </a>
                                 </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="/Mail/MailList" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Mail At</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/Register/Register" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Üye Ol</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="/ProfileInformation/Profile" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Profil Bilgisi</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/Login/Index" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Giriş yap</p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
+                        <form asp-controller="LogOut" asp-action="Index" method="post" style="display:inline;">
+                            <button type="submit" class="nav-link btn btn-link" style="color: inherit; text-decoration: none;">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Çıkış Yap</p>
-                            </a>
-                        </li>
+                            </button>
+                        </form>
+
 
 
 

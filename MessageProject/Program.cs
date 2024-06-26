@@ -14,15 +14,27 @@ using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
+
+
 builder.Services.AddDbContext<Context>();
-builder.Services.AddIdentity<User,UserRole>().AddEntityFrameworkStores<Context>();
+builder.Services.AddIdentity<User, UserRole>().AddEntityFrameworkStores<Context>().AddDefaultTokenProviders();
 // Add services to the container.
-builder.Services.AddScoped<IMessageService,MessageManager>();
+builder.Services.AddScoped<IMessageService, MessageManager>();
 builder.Services.AddScoped<IMessageDal, EfMessageDal>();
 
 
 
-builder.Services.AddControllersWithViews();
+var requireAuthorizePolicy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();
+// PROJE GENEEL? AUTHENT?CAT?ON
+builder.Services.AddControllersWithViews(opt =>
+{
+    opt.Filters.Add(new AuthorizeFilter(requireAuthorizePolicy));
+});
+
+builder.Services.ConfigureApplicationCookie(opts =>
+{
+    opts.LoginPath = "/Login/Index";
+});
 
 
 
@@ -49,4 +61,3 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
-

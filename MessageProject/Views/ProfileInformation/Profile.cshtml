@@ -1,0 +1,31 @@
+﻿@model MessageProject.Models.PasswordChangeModel
+@{
+    ViewData["Title"] = "Profile";
+    Layout = "~/Views/Shared/UserLayout.cshtml";
+}
+<form method="post">
+    <h2>Profile</h2>
+    <div class="form-group">
+        <label>Adınız</label>
+        <input type="text" class="form-control" value="@ViewBag.name" readonly />
+    </div>
+    <div class="form-group">
+        <label>Soyadınız</label>
+        <input type="text" class="form-control" value="@ViewBag.surname" readonly />
+    </div>
+    <div class="form-group">
+        <label>Kullanıcı Adınız</label>
+        <input type="text" class="form-control" value="@ViewBag.username" / readonly>
+    </div>
+    <div class="form-group">
+        <label>Mail</label>
+        <input type="email" class="form-control" value="@ViewBag.mail" / readonly>
+    </div>
+    <div class="form-group">
+        <label>Şifre</label>
+        <input type="text" class="form-control" asp-for="password">
+    </div>
+    <button type="btn btn-primary">Şifre Değiştir</button>
+</form>
+
+

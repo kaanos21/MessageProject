@@ -1,10 +1,12 @@
 ﻿using EntityLayer.Concrete;
 using MessageProject.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MessageProject.Controllers
 {
+    [AllowAnonymous]
     public class RegisterController : Controller
     {
         private readonly UserManager<User> _userManager;
@@ -23,15 +25,14 @@ namespace MessageProject.Controllers
         [HttpPost]
         public async Task<IActionResult> Register(UserRegisterModel model)
         {
-            if (ModelState.IsValid)
+
+            User user = new User()
             {
-                User user = new User()
-                {
-                    Name = model.name,
-                    SurName = model.surname,
-                    Email = model.mail,
-                    UserName = model.username
-                };
+                Name = model.name,
+                SurName = model.surname,
+                Email = model.mail,
+                UserName = model.username
+            };
 
                 var result = await _userManager.CreateAsync(user, model.password);
                 if (result.Succeeded)
@@ -45,7 +46,7 @@ namespace MessageProject.Controllers
                         ModelState.AddModelError(string.Empty, error.Description);
                     }
                 }
-            }
+            
             return View(model);
         }
     }

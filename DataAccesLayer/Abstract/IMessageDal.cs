@@ -9,5 +9,8 @@ namespace DataAccesLayer.Abstract
 {
     public interface IMessageDal : IGenericDal<Message>
     {
+        public List<Message> GetMessagedSenderWithInclude(int id);
+        public List<Message> GetMessagedReceiverWithInclude(int id);
+        public void SendMessage(Message message);
     }
 }
